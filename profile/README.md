@@ -22,6 +22,7 @@ Check out our course:
 
 ### 💻 Server Guideline  
 
+A concise guide for connecting to HiPerGator, launching JupyterLab, running SLURM jobs, and managing data storage.  
 👉 [**Server Guideline**](../guideline/README.md)
 
 ---
