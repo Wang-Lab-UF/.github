@@ -54,13 +54,13 @@ Use `scp` or `rsync`:
 
 ```bash
 # Upload
-scp -r ./project hpg:/blue/<pi-group>/<gatorlink>/project
+scp -r ./project hpg:/blue/wang.yiquan/<gatorlink>/project
 
 # Download
-scp -r hpg:/blue/<pi-group>/<gatorlink>/results ./results
+scp -r hpg:/blue/wang.yiquan/<gatorlink>/results ./results
 
 # Efficient sync
-rsync -avh --progress ./project hpg:/blue/<pi-group>/<gatorlink>/project
+rsync -avh --progress ./project hpg:/blue/wang.yiquan/<gatorlink>/project
 ```
 
 See storage locations in the [Data Storage](./data_storage.md) guide.

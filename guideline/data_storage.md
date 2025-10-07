@@ -7,12 +7,11 @@ Understand storage types, quotas, and best practices for Wang Lab.
 ## Storage Locations
 - Home: `/home/<gatorlink>`
   - Small quota, backed up. Use for configs and small files only.
-- Blue (project space): `/blue/<pi-group>/<gatorlink>`
+- Blue (project space): `/blue/wang.yiquan/<gatorlink>`
   - Group/project space for active work. Backed up per RC policy.
-- Scratch: `/orange/<pi-group>` or `/scratch/local`
+- Scratch: `/orange/wang.yiquan` or `/scratch/local`
   - High-performance, not backed up, purged periodically. For temporary files.
 
-Check current RC docs for the exact lab group paths (`<pi-group>`), which may be `wang-lab` or similar.
 
 ---
 
