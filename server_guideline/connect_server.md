@@ -15,17 +15,24 @@ This guide shows how to request access and connect to UF Research Computing's Hi
 Generate a key locally and upload the public key to HiPerGator account portal.
 
 ```bash
-ssh-keygen -t ed25519 -C "<gatorlink>@ufl.edu"
-cat ~/.ssh/id_ed25519.pub
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "<gatorlink>@ufl.edu"
 ```
 
-Add the public key in the RC portal, then test:
+Run the following command to copy your public key to HiPerGator:
 
 ```bash
-ssh <gatorlink>@hpg.rc.ufl.edu
+ssh-copy-id -i ~/.ssh/id_ed25519 <gatorlink>@hpg.rc.ufl.edu
 ```
 
-If Duo is required, follow prompts. For first-time login, you may be placed on a login node such as `login2.chpc.rc.ufl.edu`.
+Congratulations your key is now authorized to login to your account on HPG.
+
+To SSH into HiPerGator using your SSH keys, run the following command:
+
+```bash
+ssh -p 2222 <gatorlink>@hpg.rc.ufl.edu
+```
+
+If Duo is required, follow prompts. More questions, please see https://docs.rc.ufl.edu/access/ssh_keys/
 
 ---
 
@@ -37,6 +44,7 @@ Host hpg
   HostName hpg.rc.ufl.edu
   User <gatorlink>
   IdentityFile ~/.ssh/id_ed25519
+  Port 2222
   ServerAliveInterval 60
   ServerAliveCountMax 120
 ```
