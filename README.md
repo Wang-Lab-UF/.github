@@ -3,7 +3,7 @@
 This repo hosts shared documentation and resources for the Wang Lab at UF.
 
 ## Contents
-- Guidelines: see [`guideline/`](./guideline/) for HiPerGator usage
+- Server Guidelines: see [`server_guideline/`](./server_guideline/) for HiPerGator usage
   - Connect to HiPerGator
   - Start JupyterLab
   - Run/Submit SLURM jobs
@@ -11,7 +11,7 @@ This repo hosts shared documentation and resources for the Wang Lab at UF.
 - Profiles: see [`profile/`](./profile/) for lab overview and links
 
 ## Quick Links
-- HiPerGator Guidelines index: [`guideline/README.md`](./guideline/README.md)
+- HiPerGator Server Guidelines index: [`server_guideline/README.md`](./server_guideline/README.md)
 - Lab profile: [`profile/README.md`](./profile/README.md)
 
 ## Contributing
