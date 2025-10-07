@@ -37,3 +37,5 @@ bigmem | 31 days | Large-memory jobs
 hpg-dev | 12h | Development / short jobs
 hpg-milan | 31 days | Large cluster for computation
 hwgui | 4 days | GUI jobs / small interactive tasks
+b200 | 14 days | GPU partition (NVIDIA B200), best for AI; check `sinfo` for node availability
+hpg-turin | 14 days | AMD Turin CPU nodes, Hipergator 4; check `sinfo` for node availability
