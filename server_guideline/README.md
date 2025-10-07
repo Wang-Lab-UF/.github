@@ -12,8 +12,8 @@ A concise handbook for Wang Lab members using UF Research Computing's HiPerGator
 ## Quick Start
 
 - SSH: `ssh <gatorlink>@hpg.rc.ufl.edu`
-- Check storage: `lquota` and `mmlsquota` (see [Storage](./data_storage.md))
-- JupyterLab via SLURM (interactive): see [JupyterLab](./jupyter_lab.md)
+- Check storage: `du -sh ~` (see [Storage](./data_storage.md))
+- JupyterLab via OnDemand:https://ood.rc.ufl.edu (see [JupyterLab](./jupyter_lab.md))
 - Submit job: `sbatch job.sbatch` (see [SLURM](./slurm_jobs.md))
 
 
