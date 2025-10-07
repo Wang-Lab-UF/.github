@@ -17,10 +17,6 @@ Understand storage types, quotas, and best practices for Wang Lab.
 
 ## Quotas and Usage
 ```bash
-# Quotas
-lquota
-mmlsquota
-
 # Disk usage
 du -sh .
 ```

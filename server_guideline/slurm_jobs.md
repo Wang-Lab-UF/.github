@@ -1,6 +1,6 @@
 # SLURM: Run and Submit Jobs on HiPerGator
 
-This guide covers interactive sessions, batch jobs, job arrays, and monitoring.
+This guide covers interactive sessions, batch jobs, job arrays, and monitoring. see more: https://docs.rc.ufl.edu/scheduler/
 
 ---
 
