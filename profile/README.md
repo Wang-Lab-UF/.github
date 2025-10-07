@@ -20,11 +20,17 @@ Check out our course:
 
 ---
 
+### 💻 Server Guideline  
+
+👉 [**Server Guideline**](../guideline/README.md)
+
+---
+
 ### 🛠️ Resources  
 - 🌐 [Lab Website](https://yiquan2.com/Lab-Page/)  
 - 📚 [AI-Immunology Resources](https://yiquan2.com/AI-Immunology-Resources/) — a curated collection of AI tools, methods, datasets, and guides for immunologists and virologists  
 - 📊 [Public Datasets](https://github.com/YourOrg/datasets)  
-- 💻 [Software Tools](https://github.com/YourOrg/tools)  
+- 💻 [Software Tools](https://github.com/YourOrg/tools)
 
 ---
 
