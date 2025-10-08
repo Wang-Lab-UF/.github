@@ -24,8 +24,8 @@ A concise handbook for Wang Lab members using UF Research Computing's HiPerGator
 ## SLURM Cheat Sheet (HiPerGator)
 - List partitions (summary): `sinfo -s`
 - Your jobs in queue: `squeue -u $USER`
-- Interactive CPU session: `salloc --partition=hpg-default --cpus-per-task=4 --mem=16gb --time=02:00:00`
-- Interactive GPU session: `salloc --partition=gpu --gpus=1 --cpus-per-task=8 --mem=32gb --time=04:00:00`
+- Interactive CPU session: `salloc --partition=hpg-default --cpus-per-task=4 --mem=16gb --time=02:00:00 --pty -u bash -i`
+- Interactive GPU session: `salloc --partition=hpg-b200 --gpus=1 --cpus-per-task=8 --mem=32gb --time=04:00:00 --pty -u bash -i`
 - Submit batch job: `sbatch job.sbatch`
 - Cancel job: `scancel <jobid>`
 - Job/accounting info: `sacct -j <jobid> --format=JobID,JobName,Partition,State,Elapsed,MaxRSS,ReqMem`
@@ -36,6 +36,6 @@ hpg-default | 31 days | General use
 bigmem | 31 days | Large-memory jobs
 hpg-dev | 12h | Development / short jobs
 hpg-milan | 31 days | Large cluster for computation
-hwgui | 4 days | GUI jobs / small interactive tasks
-b200 | 14 days | GPU partition (NVIDIA B200), best for AI; check `sinfo` for node availability
-hpg-turin | 14 days | AMD Turin CPU nodes, Hipergator 4; check `sinfo` for node availability
+hwgui | 4 days | Hardware accelerated GPU partition for visualization applications with NVIDIA L4 cards
+hpg-b200 | 14 days | GPU partition, NVIDIA DGX B200 SuperPod
+hpg-turin | 14 days | Regular HPG4 nodes integrated with 3 NVIDIA L4 cards per node

@@ -7,7 +7,7 @@ This guide covers interactive sessions, batch jobs, job arrays, and monitoring. 
 ## Partitions and Resources
 - Check available partitions and limits: `sinfo -s` and RC documentation.
 - Common flags:
-  - `--partition=<name>` (e.g., `hpg-default`, `gpu`)
+  - `--partition=<name>` (e.g., `hpg-default`, `hpg-b200`)
   - `--cpus-per-task=<n>`
   - `--mem=<size>` (e.g., `16gb`)
   - `--time=HH:MM:SS`
@@ -18,10 +18,10 @@ This guide covers interactive sessions, batch jobs, job arrays, and monitoring. 
 ## Interactive Session
 ```bash
 # CPU example
-salloc --partition=hpg-default --cpus-per-task=4 --mem=16gb --time=02:00:00
+salloc --partition=hpg-default --cpus-per-task=4 --mem=16gb --time=02:00:00 --pty -u bash -i
 
 # GPU example
-salloc --partition=gpu --gpus=1 --cpus-per-task=8 --mem=32gb --time=04:00:00
+salloc --partition=hpg-b200 --gpus=1 --cpus-per-task=8 --mem=32gb --time=04:00:00 --pty -u bash -i
 
 # After allocation, load env and run
 module load conda && conda activate myenv
@@ -36,6 +36,8 @@ Create `job.sbatch`:
 ```bash
 #!/bin/bash
 #SBATCH --job-name=example
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=email@ufl.edu
 #SBATCH --partition=hpg-default
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16gb
@@ -47,6 +49,7 @@ source activate myenv
 
 python train.py --epochs 10 --batch-size 64
 ```
+see more: https://docs.rc.ufl.edu/scheduler/sample_job_scripts/
 
 Submit and monitor:
 
@@ -83,7 +86,7 @@ python train.py --lr $LR
 
 ## GPU Jobs
 ```bash
-#SBATCH --partition=gpu
+#SBATCH --partition=hpg-b200
 #SBATCH --gpus=1
 
 module load cuda/12.1  # adjust per RC documentation
