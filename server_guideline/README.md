@@ -42,8 +42,8 @@ hpg-turin | 14 days | Regular HPG4 nodes integrated with 3 NVIDIA L4 cards per n
 
 ## Cursor Connection
 This guide details how to connect to HiPerGator using Cursor (or VS Code) and how to use Tmux to protect your antibody folding sessions from disconnection.
----
 
+---
 ### 1. Local SSH Configuration (On your Mac)
 To allow Cursor to "jump" through the login node and land on a compute node, add this to your `~/.ssh/config`:
 
@@ -61,11 +61,13 @@ Host c*
   ProxyJump hpg
   User <gatorlink>
 ```
+---
 ### 2. Login Node
 ```bash
 ssh hpg
 srun --partition=hpg-turin --gpus=1 --mem=64gb --time=04:00:00 --pty bash
 ```
+---
 ### 3. Open Cursor
 Press Cmd + Shift + P -> Remote-SSH: Connect to Host...
 
