@@ -24,8 +24,8 @@ A concise handbook for Wang Lab members using UF Research Computing's HiPerGator
 ## SLURM Cheat Sheet (HiPerGator)
 - List partitions (summary): `sinfo -s`
 - Your jobs in queue: `squeue -u $USER`
-- Interactive CPU session: `salloc --partition=hpg-default --cpus-per-task=4 --mem=16gb --time=02:00:00 --pty -u bash -i`
-- Interactive GPU session: `salloc --partition=hpg-b200 --gpus=1 --cpus-per-task=8 --mem=32gb --time=04:00:00 --pty -u bash -i`
+- Interactive CPU session: `salloc --partition=hpg-default --cpus-per-task=4 --mem=16gb --time=02:00:00 --pty bash -i`
+- Interactive GPU session: `salloc --partition=hpg-b200 --gpus=1 --cpus-per-task=8 --mem=32gb --time=04:00:00 --pty bash -i`
 - Submit batch job: `sbatch job.sbatch`
 - Cancel job: `scancel <jobid>`
 - Job/accounting info: `sacct -j <jobid> --format=JobID,JobName,Partition,State,Elapsed,MaxRSS,ReqMem`
@@ -39,3 +39,34 @@ hpg-milan | 31 days | Large cluster for computation
 hwgui | 4 days | Hardware accelerated GPU partition for visualization applications with NVIDIA L4 cards
 hpg-b200 | 14 days | GPU partition, NVIDIA DGX B200 SuperPod
 hpg-turin | 14 days | Regular HPG4 nodes integrated with 3 NVIDIA L4 cards per node
+
+## Cursor Connection
+This guide details how to connect to HiPerGator using Cursor (or VS Code) and how to use Tmux to protect your antibody folding sessions from disconnection.
+---
+
+### 1. Local SSH Configuration (On your Mac)
+To allow Cursor to "jump" through the login node and land on a compute node, add this to your `~/.ssh/config`:
+
+```text
+# The Gateway (Login Node)
+Host hpg
+  HostName hpg.rc.ufl.edu
+  User <gatorlink>
+  IdentityFile <your_ssh_key>
+  Port 2222
+  ServerAliveInterval 60
+
+# The Target (Compute Nodes)
+Host c*
+  ProxyJump hpg
+  User <gatorlink>
+```
+### 2. Login Node
+```bash
+ssh hpg
+srun --partition=hpg-turin --gpus=1 --mem=64gb --time=04:00:00 --pty bash
+```
+### 3. Open Cursor
+Press Cmd + Shift + P -> Remote-SSH: Connect to Host...
+
+Type your node name (e.g., c1102a-s1).
