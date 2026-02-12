@@ -48,14 +48,12 @@ This guide details how to connect to HiPerGator using Cursor (or VS Code).
 ### Easy Setup (via login node)
 Connect Cursor to the login node directly (Don't run any heavy computation in login node)
 
-Using srun to open more computation source and use that node for job running:
+Ask agent to use srun/sbatch to run job on computation node:
 ```bash
-srun --partition=hpg-turin --gpus=1 --mem=64gb --time=04:00:00
-# you then ask agent to connect to the compute node and run command
-srun --jobid=24721927 python my_script.py
+srun --partition=hpg-turin --gpus=1 --mem=64gb --time=01:00:00 <command>
 ```
 
-Or using sbatch:
+Or:
 ```bash
 sbatch my_job.sbatch
 ```
