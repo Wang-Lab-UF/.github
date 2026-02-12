@@ -43,7 +43,7 @@ hpg-turin | 14 days | Regular HPG4 nodes integrated with 3 NVIDIA L4 cards per n
 ---
 
 ## Cursor Connection
-This guide details how to connect to HiPerGator using Cursor (or VS Code) and how to use Tmux to protect your antibody folding sessions from disconnection.
+This guide details how to connect to HiPerGator using Cursor (or VS Code).
 
 ### Easy Setup (via login node)
 Connect Cursor to the login node directly (Don't run any heavy computation in login node)
