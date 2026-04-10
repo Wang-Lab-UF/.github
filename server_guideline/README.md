@@ -24,8 +24,8 @@ A concise handbook for Wang Lab members using UF Research Computing's HiPerGator
 ## SLURM Cheat Sheet (HiPerGator)
 - List partitions (summary): `sinfo -s`
 - Your jobs in queue: `squeue -u $USER`
-- Interactive CPU session: `salloc --partition=hpg-default --cpus-per-task=4 --mem=16gb --time=02:00:00 --pty bash -i`
-- Interactive GPU session: `salloc --partition=hpg-b200 --gpus=1 --cpus-per-task=8 --mem=32gb --time=04:00:00 --pty bash -i`
+- Interactive CPU session: `salloc --partition=hpg-default --cpus-per-task=4 --mem=16gb --time=02:00:00 bash -i`
+- Interactive GPU session: `salloc --partition=hpg-b200 --gpus=1 --cpus-per-task=8 --mem=32gb --time=04:00:00 bash -i`
 - Submit batch job: `sbatch job.sbatch`
 - Cancel job: `scancel <jobid>`
 - Job/accounting info: `sacct -j <jobid> --format=JobID,JobName,Partition,State,Elapsed,MaxRSS,ReqMem`
@@ -50,7 +50,7 @@ Connect Cursor to the login node directly (Don't run any heavy computation in lo
 
 Ask agent to use srun/sbatch to run job on computation node:
 ```bash
-srun --partition=hpg-turin --gpus=1 --mem=64gb --time=01:00:00 <command>
+srun --partition=hpg-turin --gpus=1 --mem=64gb --time=01:00:00 --pty bash -i
 ```
 
 Or:
