@@ -27,6 +27,13 @@ A concise guide for connecting to HiPerGator, launching JupyterLab, running SLUR
 
 ---
 
+### 🤖 Coding Agent Guideline  
+
+How to work with coding agents (Claude Code, Codex) on HiPerGator: setup, useful commands, and practical workflow.  
+👉 [**Coding Agent Guideline**](../coding_agent_guideline/README.md)
+
+---
+
 ### 🛠️ Resources  
 - 🌐 [Lab Website](https://yiquan2.com/Lab-Page/)  
 - 📚 [AI-Immunology Resources](https://yiquan2.com/AI-Immunology-Resources/) — a curated collection of AI tools, methods, datasets, and guides for immunologists and virologists  
